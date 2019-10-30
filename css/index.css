@@ -1,0 +1,96 @@
+.none{
+    width: 400px;
+    height:400px;
+    padding: 50px;
+    background: rgb(233, 245, 245);
+    margin: 100px auto;
+    perspective: 600px;
+    perspective-origin: right top;
+}
+.box{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation-name: rotate;
+    animation-duration: 2s;
+    transition: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: center center -50px;
+    perspective: 600px;
+    perspective-origin: right top;
+}
+.box div{
+    position: absolute;
+    width: 200px;
+    height: 200px; 
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transition: 2s;
+    opacity:0.8;
+}
+.box div:nth-child(1){
+    left: 0;
+    top: 0px;
+    background-image: url(../img/帕加尼.jpg) ;
+    background-size: 200px;
+    transform:rotateX(90deg);
+    transform-origin: bottom;
+    
+    
+}
+.box div:nth-child(2){
+    left: 0;
+    top: 0;
+    background-image: url(../img/大闹天宫.jpg);
+    background-size: 200px;
+    transform:rotateY(-90deg);
+    transform-origin: right;
+    
+}
+.box div:nth-child(3){
+    left: 0;
+    top: 0;
+    background-image: url(../img/蘑菇.png);
+    background-size: 200px;
+    transform: translateZ(0px);
+    
+}
+.box div:nth-child(4){
+    left: 0;
+    top: 0;
+    background-image: url(../img/背景.png) ;
+    background-size: 200px;
+    transform:rotateY(90deg);
+    transform-origin: left;
+  
+}
+.box div:nth-child(5){
+    left: 0px;
+    top: 0px;
+    background-image: url(../img/棒子.png);
+    background-size: 200px;
+    transform:rotateX(-90deg);
+    transform-origin: top;
+    
+}
+.box div:nth-child(6){
+    left: 0px;
+    top: 0px;
+    background-image: url(../img/蘑菇.png);
+    background-size: 200px;
+    transform: translateZ(-200px) rotateX(180deg);
+  
+}
+.none:hover .box {
+    transform: rotateX(180deg) rotateY(120deg);
+}
+.box:hover div{
+    transform: scale(1) rotateX(180deg) rotateY(180deg);
+}
+@keyframes rotate {
+0%{transform: rotateY(90deg) rotateX(0deg); }
+50%{transform:  rotateY(180deg) rotateX(180deg);}
+100%{transform:  rotateY(360deg) rotateX(360deg)}
+}
